@@ -1,0 +1,59 @@
+
+<% @list.each_with_index  do |video, index| %>
+<% if ((index % 3) == 0) %>
+
+
+
+        <td class="soft_border">
+            <div>
+
+                <table>
+
+                    <tr>
+                        <div>
+                            <video id="<%= video.id%>" class="video-js vjs-default-skin" controls width="310" height="173" poster="<%= escape_javascript( asset_path(video.image_path))%>" data-setup= '{"preload":true, "controls":true}'>
+                            <source src="<%=escape_javascript( asset_path(video.path)) -%>" type="video/mp4"/>
+                            </video>
+                            <p> <%= video.title %></p>
+                        </div>
+
+                    </tr>
+                </table>
+            </div>
+        </td>
+    <% else if( (index % 3) == 1)%>
+        <td class="soft_border">
+
+            <div>
+                <table>
+                    <tr>
+                        <div>
+                            <video id="<%= video.id%>" class="video-js vjs-default-skin" controls width="310" height="173" poster="<%= escape_javascript( asset_path(video.image_path))%>" data-setup= '{"preload":true, "controls":true}'>
+                            <source src="<%=escape_javascript( asset_path(video.path)) -%>" type="video/mp4"/>
+                            </video>
+                            <p> <%= video.title %></p>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+          </td>
+
+    <% else %>
+        <td class="soft_border">
+            <div>
+                <table>
+                    <tr>
+                        <div>
+                            <video id="<%= video.id%>" class="video-js vjs-default-skin" controls width="310" height="173" poster="<%= escape_javascript( asset_path(video.image_path))%>" data-setup= '{"preload":true, "controls":true}'>
+                            <source src="<%=escape_javascript( asset_path(video.path)) -%>" type="video/mp4"/>
+                            </video>
+                            <p> <%= video.title %></p>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+          </td>
+
+        <%end%>
+    <%end%>
+<%end%>
